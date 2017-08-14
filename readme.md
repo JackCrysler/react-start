@@ -18,10 +18,11 @@ react
 
 3.  属性props值可以是字符串、变量、表达式，变量和表达式用{}括起来
 
-4.  props由组件外界传到组件内部的属性或者方法，在组建内部不建议修改props的值
+4.  props由组件外界传到组件内部的属性或者方法，在组建内部不建议修改props的值；
+
     state是组件本身所具有的属性或者方法, 改变state使用setState(),继承自React.component
 
-    已经有props为何还要state？ react理念，保持数据流的单一性，为将来构建大型项目做良好的准备 
+    *已经有props为何还要state？ react理念，保持数据流的单一性，为将来构建大型项目做良好的准备* 
     
     纯函数和非纯函数：
 
@@ -40,13 +41,15 @@ react
 
 7. 生命周期
         创建期
+
             componentWillMount
             componentDidMount
-        和
+
         存在期
+
             shouldComponentUpdate(必须返回值),   
             componentWillUpdate,    
-            触发dom render,
+            dom rerender,
             componentDidUpdate
         
 
