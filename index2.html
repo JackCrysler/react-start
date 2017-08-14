@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="root"></div>
+    <script src="lib/react.js"></script>
+    <script src="lib/react-dom.js"></script>             
+    <script src="lib/babel.min.js"></script>
+    <script type="text/babel">
+        
+        class Counter extends React.Component {
+            constructor(props){
+                super(props);
+
+                this.state={
+                    num:1
+                }
+
+                this.styleObj = {
+                    color:'red',
+                    fontSize: '10rem'
+                }
+                this.add = this.add.bind(this)
+            }
+
+            componentWillMount(){//把虚拟dom渲染到浏览上之前
+                console.log('WillMount')
+            }
+
+
+            add(){
+                console.log(this)
+                this.setState(function(state){
+                    state.num++
+                })
+            }
+
+            render(){
+                return (
+                    <div>
+                        <h1 style={this.styleObj}>{this.state.num}</h1>
+                        <button onClick={this.add}>增加</button>  
+                    </div>
+                )
+            }
+
+            componentDidMount(){//把虚拟dom渲染到浏览上之后
+                console.log('DidMount');
+            }
+
+            componentWillUpdate(){
+                console.log('WillUpdate');
+                if(this.state.num>=10){
+                    this.styleObj={
+                        color:'black',
+                        fontSize: '10rem'
+                    }
+                }
+            }
+
+            componentDidUpdate(){
+                console.log('DidUpdate')
+            }
+        }
+
+        ReactDOM.render(
+            (<Counter />),
+            document.querySelector('.root')
+        )
+
+
+    </script>
+</body>
+</html>

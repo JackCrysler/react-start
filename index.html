@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+   <div id="root"></div>
+
+    <script src="lib/react.js"></script>
+    <script src="lib/react-dom.js"></script>             
+    <script src="lib/babel.min.js"></script>
+    <script type="text/babel">
+    // react 组件 可以是 普通函数 return 组件元素， 还可以是 class 提供render函数
+    // jsx语法 实质是 React.createElement()的语法糖
+    // prams1: string/ element type
+    // param2: object /props
+    // param3: children
+        function Test(props){        
+            
+            function sayName(e){
+                console.log(e)
+                console.log(e.target.getAttribute('data-abc'))
+            }
+
+            return <h1 onClick={sayName} data-abc="test">{props.name}</h1>
+        }
+
+        function Wrap(){
+            function clickMe(){
+                alert('clicked')
+            }    
+            return <div>
+                <Test name="Scarlett Johansson" clickFn={clickMe}/>
+                <Test name="Taylor Swift"/>
+                <Test name="Hermione Granger"/>
+                </div>
+        }
+
+
+        ReactDOM.render(
+            <Wrap />,
+            document.getElementById('root')
+        )
+
+    </script>    
+</body>
+</html>
