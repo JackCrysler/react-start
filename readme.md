@@ -2,14 +2,17 @@ react
 
 1.  jsx 语法 类似于html  实质是：React.createElement(type,attr,children)的语法糖
 
-2.  react component：function 或者 class(面向对象)  
-    //如果不用es6的class可以使用:
+2.  创建react component的方式：function 或者 class(面向对象)；推荐使用class方式。  
+    //如果不用es6的class可以使用:    
+
         React.createClass({
             render(){
 
             }
         })
+
     来创建class模块
+
     //this问题
     使用ES6的class去创建模块，需要把定义好的jsx函数通过bind绑定this指针，或者直接使用箭头函数，推荐使用箭头函数
 
@@ -21,14 +24,15 @@ react
     已经有props为何还要state？ react理念，保持数据流的单一性，为将来构建大型项目做良好的准备 
     
     纯函数和非纯函数：
-    function test(a,b){//纯
-        return a+b
-    }
 
-    function test(a,b){//非纯
-        a = 1;
-        return a+b
-    }
+        function test(a,b){//纯
+            return a+b
+        }
+
+        function test(a,b){//非纯
+            a = 1;
+            return a+b
+        }
 
 5. 事件绑定要用驼峰写法 onClick  onInput 
 
