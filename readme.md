@@ -80,14 +80,17 @@ react
 
                 componentWillUnmount
 
-8. 列表循环 数据请求
+8. 
+    列表循环：在插值表达式{}中放数组，数组中放子组件即可;
+
+    数据请求：在componentDidMount生命周期钩子中进行ajax请求；也可以在外面完成数据请求之后调用ReactDOM.render()
 
 9.      
     父=>子： props 单项数据流
 
     子=>子： 状态提升 子组件的状态提升到共有父state中
 
-10. ref获取实际dom，在mount时执行
+10. ref属性存放指定的实际dom元素，在componentDidMount时执行
 
 11. react中将字符串作为innerHTML的值输出使用dangerouslySetInnerHTML属性，它的值是一个函数如：
 
