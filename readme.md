@@ -40,7 +40,9 @@ react
 6. 样式设置
 
 7. 生命周期
+
         ES6 Class创建的component
+
         创建期
 
             componentWillMount
@@ -54,23 +56,26 @@ react
             dom rerender,
             componentDidUpdate
         
-        React.createClass({})
+        React.createClass({})创建的component
+
         创建期
 
-        getDefaultProps
-        getInitialState
-        componentWillMount
-        componentDidMount
+            getDefaultProps
+            getInitialState
+            componentWillMount
+            componentDidMount
 
         存在期
-        componentWillRecevieProps
-        shouldComponentUpdate
-        componentWillUpdate
-        componentDidUpdate
+
+            componentWillRecevieProps
+            shouldComponentUpdate
+            componentWillUpdate
+            componentDidUpdate
 
         销毁期
-        componentWillUnmount
-        
+
+            componentWillUnmount
+
 8. 列表循环 数据请求
 
 9. 父=>子 子=>子
@@ -86,4 +91,8 @@ react
     }
 
     其中__html用来配置将要输出的具体内容
+
+
+
+
 
