@@ -1,8 +1,8 @@
 react  
 
-1.  jsx 语法 类似于html  实质是：React.createElement(type,attr,children)的语法糖
+1.  jsx语法，类似于html。它的实质是：React.createElement(type,attr,children)的语法糖
 
-2.  创建react component的方式：function 或者 class(面向对象)；推荐使用class方式。  
+2.  创建react component的方式：function 或者 ES6-class（推荐使用class方式）。  
     
     * 如果不用es6的class可以使用：  
 
@@ -16,11 +16,11 @@ react
 
     * this问题  
 
-        使用ES6的class去创建模块，需要把定义好的jsx函数通过bind绑定this，或者直接使用箭头函数，推荐使用箭头函数
+        使用ES6的class去创建组件，需要把定义在jsx上的函数bind(this)，或者直接使用箭头函数。
 
-3.  属性props值可以是字符串、变量、表达式，变量和表达式用{}括起来
+3.  ReactDOM.render()用于把react创建的虚拟dom渲染到浏览器中。
 
-4.  props由组件外界传到组件内部的属性或者方法，在组建内部不建议修改props的值;
+4.  props由组件外界传到组件内部的属性或者方法，在组建内部不建议修改props的值。属性props值可以是字符串、变量、表达式、函数，变量和表达式用{}括起来;
 
     state是组件本身所具有的属性或者方法, 改变state使用setState(),继承自React.component;
 
@@ -37,9 +37,11 @@ react
             return a+b
         }
 
+    * 当你想要实现继承时，不妨试试组件拼装。props.children类似于vue的slot插槽
+
 5. 事件绑定要用驼峰写法 onClick  onInput 
 
-6. 样式设置
+6. 样式设置，在react中以对象的形式设置样式，驼峰命名法，赋值给组件元素的style属性即可
 
 7. 生命周期
 
