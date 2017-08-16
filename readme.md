@@ -6,14 +6,14 @@ react
     * 如果不用es6的class可以使用：  
 
     <code>
-        React.createClass({                                                          
-
+        React.createClass({  
+            
             render(){
                     
             }  
 
         })
-    </code>
+    </code>  
     来创建class模块
 
     * this问题
