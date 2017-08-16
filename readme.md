@@ -3,10 +3,11 @@ react
 1.  jsx 语法 类似于html  实质是：React.createElement(type,attr,children)的语法糖
 
 2.  创建react component的方式：function 或者 class(面向对象)；推荐使用class方式。  
-    * 如果不用es6的class可以使用：
+    * 如果不用es6的class可以使用：  
+
     <code>
-        React.createClass({  
-            
+        React.createClass({                                                          
+
             render(){
                     
             }  
