@@ -4,10 +4,10 @@ react
 
 2.  创建react component的方式：function 或者 class(面向对象)；推荐使用class方式。  
     * 如果不用es6的class可以使用:    
-                                
+
         React.createClass({
             render(){
-
+                    
             }
         })
 
