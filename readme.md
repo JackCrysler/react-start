@@ -4,7 +4,7 @@ react
 
 2.  创建react component的方式：function 或者 class(面向对象)；推荐使用class方式。  
     * 如果不用es6的class可以使用:    
-
+                                
         React.createClass({
             render(){
 
@@ -80,7 +80,7 @@ react
 
 9.      
     父=>子： props 单项数据流
-    
+
     子=>子： 状态提升 子组件的状态提升到共有父state中
 
 10. ref获取实际dom，在mount时执行
