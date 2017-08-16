@@ -37,7 +37,7 @@ react
             return a+b
         }
 
-    * 当你想要实现继承时，不妨试试组件拼装。props.children类似于vue的slot插槽
+    * *当你想要实现继承时，不妨试试组件拼装。props.children类似于vue的slot插槽*
 
 5. 事件绑定要用驼峰写法 onClick  onInput 
 
