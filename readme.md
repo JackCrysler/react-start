@@ -14,7 +14,6 @@ react
 
             })
         </code>
-    来创建class模块
 
     * this问题
     使用ES6的class去创建模块，需要把定义好的jsx函数通过bind绑定this指针，或者直接使用箭头函数，推荐使用箭头函数
