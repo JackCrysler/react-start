@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>状态提升</title>
+</head>
+<body>
+    <div id="root"></div>    
+    
+    <script src="lib/jquery.js"></script>
+    <script src="lib/react.js"></script>
+    <script src="lib/react-dom.js"></script>
+    <script src="lib/babel.min.js"></script>
+    <script type="text/babel">
+        class InputItem extends React.Component {
+            constructor(props){
+                super(props);
+                console.log(this);
+                this.typeInput = this.typeInput.bind(this)
+            }
+
+            typeInput(e){
+                console.log(e.target.value)
+                this.props.setVal(e.target.value)
+            }
+
+            componentWillReceiveProps(a){
+                console.log('a:')
+                console.log(a)
+            }
+
+            render(){
+                return (
+                    <p><input type="text" onInput={this.typeInput} value={this.props.val}/></p>
+                )
+            }
+        }
+
+        class Wrap extends React.Component {
+            constructor(props){
+                super(props);
+                this.state ={
+                    val:''
+                }
+                this.setVal = this.setVal.bind(this)
+            }
+
+            setVal(data){
+                this.setState((state)=>{
+                    state.val = data
+                })
+            }
+
+
+            render(){
+                return (
+                    <div>
+                        <InputItem val={this.state.val} setVal={this.setVal}/>
+                        <InputItem val={this.state.val} setVal={this.setVal} />
+                        <button onClick={this.setVal}>赋值</button>  
+                    </div>
+                )
+            }
+        }
+
+        ReactDOM.render(
+            <Wrap />,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+</html>
