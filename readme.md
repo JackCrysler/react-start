@@ -6,18 +6,16 @@ react
     
     * 如果不用es6的class可以使用：  
 
-        <code>
-            React.createClass({  
+        React.createClass({  
                 
-                render(){
-                        
-                }  
+            render(){
+                    
+            }  
 
-            })
-        </code>  
+        }) 
 
     * this问题  
-    
+
     使用ES6的class去创建模块，需要把定义好的jsx函数通过bind绑定this，或者直接使用箭头函数，推荐使用箭头函数
 
 3.  属性props值可以是字符串、变量、表达式，变量和表达式用{}括起来
