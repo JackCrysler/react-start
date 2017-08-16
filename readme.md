@@ -22,15 +22,15 @@ react
 
     state是组件本身所具有的属性或者方法, 改变state使用setState(),继承自React.component;
 
-    * *已经有props为何还要state？ react理念，保持数据流的单一性，为将来构建大型项目做良好的准备* 
+    * *已经有props为何还要state？ react理念，保持数据流的单一性，在组件内部不能直接修改传入的props，为构建大型项目做基础* 
     
     纯函数和非纯函数：
 
-        function test(a,b){//纯
-            return a+b
+        function test(a,b){//纯：入参是只读的
+            return a+b 
         }
 
-        function test(a,b){//非纯
+        function test(a,b){//非纯：函数内部修改了入参
             a = 1;
             return a+b
         }
@@ -78,17 +78,19 @@ react
 
 8. 列表循环 数据请求
 
-9. 父=>子 子=>子
+9.      
+    父=>子： props 单项数据流
+    子=>子： 状态提升 子组件的状态提升到共有父state中
 
 10. ref获取实际dom，在mount时执行
 
 11. react中将字符串作为innerHTML的值输出使用dangerouslySetInnerHTML属性，它的值是一个函数如：
 
-    function info2(){
-        return {
-            __html:data[1].titleZh
+        function info2(){
+            return {
+                __html:data[1].titleZh
+            }
         }
-    }
 
     其中__html用来配置将要输出的具体内容
 
