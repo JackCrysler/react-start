@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;margin: 0;
+            box-sizing: border-box;
+        }
+        .wrap{
+            position: relative;
+            width: 300px;
+            height: 130px;
+            margin: 10px 0;
+
+        }
+        .wrap p{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;  
+            transition: transform 1s linear;
+            background: orange;
+            color: #000;
+            backface-visibility: hidden;
+            line-height: 1.4;
+            text-indent: 1rem;
+            font-size: 1rem;
+            overflow: hidden;             
+        }
+        .wrap p span{
+            display: block;
+            width: 100%;
+            padding: 5px;
+        }
+        .active{
+            transform: rotateX(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="root"></div>    
+    
+    <!-- <script src="lib/jquery.js"></script> -->
+    <script src="lib/react.js"></script>
+    <script src="lib/react-dom.js"></script>
+    <script src="lib/babel.min.js"></script>
+    <script type="text/babel">
+        // 每一个新闻条的组件
+        class NewsItem extends React.Component{
+            constructor(props){
+                super(props);
+                this.state = {
+                    flag:false
+                }
+                
+                this.rotate=this.rotate.bind(this);
+                this.setIndex=this.setIndex.bind(this);
+            }
+
+            rotate(){
+                this.setState({
+                    flag:!this.state.flag
+                })
+            }
+
+            componentWillReceiveProps(props){
+                if(props['data-key'] == props.index){
+                    console.log('当前子组件的key是：'+props['data-key']);
+                    this.rotate();
+                }
+            }
+
+            componentDidMount(){
+                setTimeout(()=> {
+                     
+                    if(this.props['data-key'] == this.props.index){
+                        console.log('当前子组件的key是：'+this.props['data-key'])
+                        //console.log(props);
+                        this.rotate();
+                    }
+                    
+                }, 1000);
+            }
+
+            setIndex(){
+                this.props.changeIndexFn(this.props['data-key'])
+            }
+
+            render(){
+
+                return (
+                    <div className="wrap">
+                        <p className={this.state.flag?'active':''} onTransitionEnd={this.setIndex}>
+                            <span className="title">中国央行副行长殷勇：人民币能在</span>
+                            <span className="detail">而言更大，中国在提供人民币资金方面更有相对竞争优势，人民币应该能够在建设中发挥更大作用</span>    
+                        </p>
+                        <p className={this.state.flag?'':'active'}>
+                            <span className="title">sssssssssssssssssssssss</span>
+                            <span className="detail">content</span>
+                        </p>
+                    </div>
+                )
+            }
+        };
+                    
+        //所有新闻的容器组件
+        class Wrap extends React.Component {
+            constructor(props){
+                super(props);
+             
+                this.state={
+                    index:0
+                };
+                this.changeIndex= this.changeIndex.bind(this)
+            }
+
+            changeIndex(key){
+                console.log(key);
+
+                this.setState(function(state) {
+                    state.index= key<4?key+1:0
+                })
+            }
+
+            render(){
+                
+                return (
+                    <div>
+                        {[
+                            <NewsItem index={this.state.index} changeIndexFn={this.changeIndex} key={0} data-key={0} />,   
+                            <NewsItem index={this.state.index} changeIndexFn={this.changeIndex} key={1} data-key={1} />,
+                            <NewsItem index={this.state.index} changeIndexFn={this.changeIndex} key={2} data-key={2} />,
+                            <NewsItem index={this.state.index} changeIndexFn={this.changeIndex} key={3} data-key={3} />,
+                            <NewsItem index={this.state.index} changeIndexFn={this.changeIndex} key={4} data-key={4} />
+                        ]}   
+                    </div>
+                )
+            }
+        }
+
+
+        ReactDOM.render(
+            <Wrap />,
+            document.getElementById('root')
+        )
+
+        /* $.ajax('data/newslist.json').then(function(data) {
+
+            ReactDOM.render(
+                <Wrap list={data.resultList}/>,
+                document.getElementById('root')
+            )
+
+        }) */
+
+    </script>
+</body>
+</html>

@@ -80,6 +80,8 @@ react
 
                 componentWillUnmount
 
+    * *注意：一定不要在componentWillUpdate或者componentDidUpdate这样的生命周期中去执行setState()操作，会导致闭环。*        
+
 8. 
     列表循环：在插值表达式{}中放数组，数组中放子组件即可;
 
