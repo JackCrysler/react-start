@@ -20,7 +20,7 @@ react
 
 3.  ReactDOM.render()用于把react创建的虚拟dom渲染到浏览器中。
 
-4.  props由组件外界传到组件内部的属性或者方法，在组建内部不建议修改props的值。属性props值可以是字符串、变量、表达式、函数，变量和表达式用{}括起来;
+4.  props是由组件外界传到组件内部的属性或者方法，在组建内部不建议修改props的值。属性props值可以是字符串、变量、表达式、函数，变量和表达式用{}括起来;
 
     state是组件本身所具有的属性或者方法, 改变state使用setState(),继承自React.component;
 
