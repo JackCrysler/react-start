@@ -41,40 +41,40 @@ react
 
 7. 生命周期
 
-        ES6 Class创建的component
+        * ES6 Class创建的component
 
-        创建期
+            创建期
 
-            componentWillMount
-            componentDidMount
+                componentWillMount
+                componentDidMount
 
-        存在期
+            存在期
 
-            componentWillRecevieProps
-            shouldComponentUpdate(必须返回值),   
-            componentWillUpdate,    
-            dom rerender,
-            componentDidUpdate
-        
-        React.createClass({})创建的component
+                componentWillRecevieProps
+                shouldComponentUpdate(必须返回值),   
+                componentWillUpdate,    
+                dom rerender,
+                componentDidUpdate
+            
+        * React.createClass({})创建的component
 
-        创建期
+            创建期
 
-            getDefaultProps
-            getInitialState
-            componentWillMount
-            componentDidMount
+                getDefaultProps
+                getInitialState
+                componentWillMount
+                componentDidMount
 
-        存在期
+            存在期
 
-            componentWillRecevieProps
-            shouldComponentUpdate
-            componentWillUpdate
-            componentDidUpdate
+                componentWillRecevieProps
+                shouldComponentUpdate
+                componentWillUpdate
+                componentDidUpdate
 
-        销毁期
+            销毁期
 
-            componentWillUnmount
+                componentWillUnmount
 
 8. 列表循环 数据请求
 
