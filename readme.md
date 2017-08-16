@@ -13,7 +13,7 @@ react
                 }  
 
             })
-        </code>  
+        </code>
     来创建class模块
 
     * this问题
