@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="root">
+
+    </div>
+    <script src="lib/react.js"></script>
+    <script src="lib/react-dom.js"></script>             
+    <script src="lib/babel.min.js"></script>
+    <script type="text/babel">
+        let Test = React.createClass({
+            getDefaultProps(){
+                console.log('DefaultProps')
+                return {
+                    num:1,
+                    data:1
+                }
+            },
+            getInitialState(){
+                console.log('InitialState');
+                return {
+                    num:2
+                }
+            },
+            componentWillMount(){
+                console.log('WillMount');
+            },
+            change(){
+                console.log('change')
+            },
+            render:function(){
+                return (<input type="text" value={this.props.data} onChange={this.change}/>)//jsx语法是React.createElement()的语法糖
+            },
+            componentDidMount(){
+                console.log('DidMount');
+            },
+            componentWillReceiveProps(){//存在期：即将接受新的props属性
+                console.log('WillRecevieProps')
+            },
+            shouldComponentUpdate(){
+                console.log('ShouldUpdate')
+                return true
+            },
+            componentWillUpdate(state){
+                console.log(state)
+                console.log('WillUpdate')
+            },
+            componentDidUpdate(){
+                console.log('DidUpdate')
+            },
+        })
+
+        let Wrap = React.createClass({
+            getInitialState(){
+                return {
+                    num:3
+                }
+            },
+            componentDidMount(){
+                setTimeout(()=> {
+                    this.setState(function(state){
+                        state.num=2
+                    })
+                }, 2000);
+            },
+            render(){
+                return (<div>
+                        <Test data={this.state.num}></Test>
+                    </div>)
+            },
+            componentWillUnmount(){
+                console.log('WillUnmount')
+            }
+        })
+
+        ReactDOM.render(
+            <Wrap />,
+            document.querySelector('.root')
+        )
+
+        setTimeout(()=>{
+            ReactDOM.render(
+                (<div></div>),
+                document.querySelector('.root')
+            )   
+        },5000)
+
+    </script>
+</body>
+</html>

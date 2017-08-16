@@ -3,7 +3,7 @@ react
 1.  jsx 语法 类似于html  实质是：React.createElement(type,attr,children)的语法糖
 
 2.  创建react component的方式：function 或者 class(面向对象)；推荐使用class方式。  
-    //如果不用es6的class可以使用:    
+    * 如果不用es6的class可以使用:    
 
         React.createClass({
             render(){
@@ -13,7 +13,7 @@ react
 
     来创建class模块
 
-    //this问题
+    * this问题
     使用ES6的class去创建模块，需要把定义好的jsx函数通过bind绑定this指针，或者直接使用箭头函数，推荐使用箭头函数
 
 3.  属性props值可以是字符串、变量、表达式，变量和表达式用{}括起来
@@ -40,7 +40,7 @@ react
 6. 样式设置
 
 7. 生命周期
-
+        ES6 Class创建的component
         创建期
 
             componentWillMount
@@ -48,17 +48,42 @@ react
 
         存在期
 
+            componentWillRecevieProps
             shouldComponentUpdate(必须返回值),   
             componentWillUpdate,    
             dom rerender,
             componentDidUpdate
         
+        React.createClass({})
+        创建期
 
+        getDefaultProps
+        getInitialState
+        componentWillMount
+        componentDidMount
+
+        存在期
+        componentWillRecevieProps
+        shouldComponentUpdate
+        componentWillUpdate
+        componentDidUpdate
+
+        销毁期
+        componentWillUnmount
+        
 8. 列表循环 数据请求
 
 9. 父=>子 子=>子
 
 10. ref获取实际dom，在mount时执行
 
+11. react中将字符串作为innerHTML的值输出使用dangerouslySetInnerHTML属性，它的值是一个函数如：
 
+    function info2(){
+        return {
+            __html:data[1].titleZh
+        }
+    }
+
+    其中__html用来配置将要输出的具体内容
 
