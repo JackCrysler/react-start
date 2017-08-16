@@ -6,13 +6,13 @@ react
     
     * 如果不用es6的class可以使用：  
 
-        React.createClass({  
-                
-            render(){
+            React.createClass({  
                     
-            }  
+                render(){
+                        
+                }  
 
-        }) 
+            }) 
 
     * this问题  
 
