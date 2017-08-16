@@ -88,7 +88,7 @@ react
 
         function info2(){
             return {
-                __html:data[1].titleZh
+                __html:'<div>html字符串</div>'
             }
         }
 
