@@ -9,7 +9,7 @@
 <body>
     <div id="root"></div>    
     
-    <script src="lib/jquery.js"></script>
+    <!-- <script src="lib/jquery.js"></script> -->
     <script src="lib/react.js"></script>
     <script src="lib/react-dom.js"></script>
     <script src="lib/babel.min.js"></script>
@@ -17,18 +17,18 @@
         class InputItem extends React.Component {
             constructor(props){
                 super(props);
-                console.log(this);
+                
                 this.typeInput = this.typeInput.bind(this)
             }
 
             typeInput(e){
-                console.log(e.target.value)
+                
                 this.props.setVal(e.target.value)
             }
 
-            componentWillReceiveProps(a){
-                console.log('a:')
-                console.log(a)
+            componentWillReceiveProps(props){
+                console.log('props:'+JSON.stringify(props))
+                
             }
 
             render(){
@@ -53,11 +53,14 @@
                 })
             }
 
+            componentDidMount(){
+                dconsole.log(this.refs.test)
+            }
 
             render(){
                 return (
                     <div>
-                        <InputItem val={this.state.val} setVal={this.setVal}/>
+                        <InputItem ref="test" val={this.state.val} setVal={this.setVal}/>
                         <InputItem val={this.state.val} setVal={this.setVal} />
                         <button onClick={this.setVal}>赋值</button>  
                     </div>

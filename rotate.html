@@ -71,7 +71,8 @@
             componentWillReceiveProps(props){
                 if(props['data-key'] == props.index){
                     console.log('当前子组件的key是：'+props['data-key']);
-                    this.rotate();
+                    setTimeout(()=>this.rotate(),1500)
+                    
                 }
             }
 
