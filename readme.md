@@ -1,4 +1,4 @@
-react  
+# react 核心知识 
 
 1.  jsx语法，类似于html。它的实质是：React.createElement(type,attr,children)的语法糖
 
@@ -82,12 +82,9 @@ react
 
     * *注意：一定不要在componentWillUpdate或者componentDidUpdate这样的生命周期中去执行setState()操作，会导致闭环。*        
 
-    * React生命周期图示( *This image was created by liqin ci.* )：
+    **React生命周期图示( *This image was created by liqin ci.* )：**
 
-    <p align="center">
-        <a style="display:block;width:100%;" href="https://github.com/JackCrysler/react-start/raw/master/img/001.png" target="_blank"><img width="100" src="https://github.com/JackCrysler/react-start/raw/master/img/001.png" style="max-width:100%;"></a>
-    </p>
-
+    ![两步验证 here](https://github.com/JackCrysler/react-start/raw/master/img/001.png)
     
 
 8. 
