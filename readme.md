@@ -22,7 +22,7 @@
 
 4.  props是由组件外界传到组件内部的属性或者方法，在组建内部不建议修改props的值。属性props值可以是字符串、变量、表达式、函数，变量和表达式用{}括起来;
 
-    state是组件本身所具有的属性或者方法, 改变state使用setState(),继承自React.component;
+    state是组件本身所具有的属性或者方法, 改变state使用setState(),只有通过setState才能触发react视图更新,这个方法和其他生命周期一样都继承自React.component;
 
     * *已经有props为何还要state？ react理念，保持数据流的单一性，在组件内部不能直接修改传入的props，为构建大型项目做基础* 
     
