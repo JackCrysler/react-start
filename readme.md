@@ -85,7 +85,8 @@ react
     * React生命周期图示(*This image was created by liqin ci.*)：
 
     <p align="center">
-        <a width="100" href="https://github.com/JackCrysler/react-start/raw/master/img/001.png" target="_blank"><img width="100" src="https://github.com/JackCrysler/react-start/raw/master/img/001.png" style="max-width:100%;"></a>
+        
+        ![Alt text]("https://github.com/JackCrysler/react-start/raw/master/img/001.png")
     </p>
 
     
