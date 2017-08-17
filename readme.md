@@ -84,7 +84,7 @@
 
     * **React生命周期图示( *This image was created by liqin ci.* )：**
 
-    ![两步验证 here](https://github.com/JackCrysler/react-start/raw/master/img/01.png)
+    ![两步验证 here](https://github.com/JackCrysler/react-start/raw/master/img/001.png)
     
 
 
