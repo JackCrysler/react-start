@@ -82,13 +82,13 @@ react
 
     * *注意：一定不要在componentWillUpdate或者componentDidUpdate这样的生命周期中去执行setState()操作，会导致闭环。*        
 
-    * React生命周期图示：
+    * React生命周期图示(*This image was created by liqin ci.*)：
 
     <p align="center">
         <a width="100" href="https://github.com/JackCrysler/react-start/raw/master/img/001.png" target="_blank"><img width="100" src="https://github.com/JackCrysler/react-start/raw/master/img/001.png" style="max-width:100%;"></a>
     </p>
 
-    * This image was created by liqin ci.*  
+    
 
 8. 
     列表循环：在插值表达式{}中放数组，数组中放子组件即可;
