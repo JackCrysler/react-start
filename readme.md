@@ -86,7 +86,7 @@ react
 
     <p align="center">
         
-        ![Alt text]("https://github.com/JackCrysler/react-start/raw/master/img/001.png")
+        ![Alt text](https://github.com/JackCrysler/react-start/raw/master/img/001.png)
     </p>
 
     
