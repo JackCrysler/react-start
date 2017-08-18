@@ -1,5 +1,5 @@
 # react 核心知识 
-
+##### 去年元夜时，花市灯如昼，月上柳梢头，人约黄昏后
 1.  jsx语法，类似于html。它的实质是：React.createElement(type,attr,children)的语法糖
 
 2.  创建react component的方式：function 或者 ES6-class（推荐使用class方式）。  
@@ -37,7 +37,7 @@
             return a+b
         }
 
-    * *当你想要实现继承时，不妨试试组件拼装。props.children类似于vue的slot插槽*
+    + *当你想要实现继承时，不妨试试组件拼装。props.children类似于vue的slot插槽*
 
 5. 事件绑定要用驼峰写法 onClick  onInput 
 
@@ -98,17 +98,15 @@
 
     子=>子： 状态提升 子组件的状态提升到共有父state中
 
-10. ref属性存放指定的实际dom元素，在componentDidMount时执行
+10. ref属性存放指定的实际dom元素，在componentDidMount时执行,如果ref属性定义在实例组件上，它将会存放组件的实例，一般可以通过this.refs.[ref属性值].[方法名]来调用实例的方法。
 
-11. react中将字符串作为innerHTML的值输出使用dangerouslySetInnerHTML属性，它的值是一个函数如：
+11. react中将字符串作为innerHTML的值输出使用dangerouslySetInnerHTML属性，它的值是一个对象：
 
-        function info2(){
-            return {
-                __html:'<div>html字符串</div>'
-            }
+        {
+            __html:'html字符串'
         }
 
-    其中__html用来配置将要输出的具体内容
+    __html用来配置将要输出的具体内容
 
 
 
