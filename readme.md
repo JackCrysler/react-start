@@ -100,7 +100,7 @@
 
 10. ref属性存放指定的实际dom元素，在componentDidMount时执行,如果ref属性定义在实例组件上，它将会存放组件的实例，一般可以通过this.refs.[ref属性值].[方法名]来调用实例的方法。
 
-11. react中将字符串作为innerHTML的值输出使用dangerouslySetInnerHTML属性，它的值是一个对象：
+11. react中将字符串作为innerHTML的值输出使用dangerouslySetInnerHTML属性，它的值是一个拥有'__html'属性的对象：
 
         {
             __html:'html字符串'
@@ -108,7 +108,27 @@
 
     __html用来配置将要输出的具体内容
 
+12. 类型检查typechecking
 
+    传入react组件的参数，在定义的时候可以指定类型，如果使用者未传入指定类型react会抛出warning（注意warning不是报错），这个类似于vue组件props参数为object时的用法，不过react更强大更全面。<a href="https://facebook.github.io/react/docs/typechecking-with-proptypes.html">参考文档</a>
 
+    下面列举几个较为基本的类型检查：
 
+    
+    import PropTypes from 'prop-types'（react15.5版本以后propTypes从react中提出来成为单独的包，通过npm下载）;
+
+    MyComponent.propTypes = {
+
+            optionalArray: PropTypes.array,//限制类型为数组
+            optionalBool: PropTypes.bool,//限制类型为布尔值
+            optionalFunc: PropTypes.func,//限制类型为function
+            optionalNumber: PropTypes.number,//限制类型为数字
+            optionalObject: PropTypes.object,//限制类型为对象
+            optionalString: PropTypes.string,//限制类型为字符串
+            optionalNode: PropTypes.node,//限制类型为DOM元素
+            optionalElement: PropTypes.element,//限制类型为react组件元素
+            optionalEnum: PropTypes.oneOf(['News', 'Photos'])//限制值为'News'或'Photos'
+    }
+
+    
 
