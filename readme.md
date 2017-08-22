@@ -98,7 +98,7 @@
 
     子=>子： 状态提升 子组件的状态提升到共有父state中
 
-10. ref属性存放指定的实际dom元素，在componentDidMount时执行,也就是说在组件mount之前ref是拿不到的。如果ref属性定义在实例组件上，它将会存放组件的实例，一般可以通过this.refs.[ref属性值].[方法名]来调用实例的方法。另外ref的值也可以是function(target){};target存放实际dom或者组件实例。
+10. ref属性存放指定的实际dom元素，在componentDidMount时执行，也就是说在组件mount之前ref是拿不到的。如果ref属性定义在实例组件上，它将会存放组件的实例，一般可以通过this.refs.[ref属性值].[方法名]来调用实例的方法。另外ref的值也可以是function(target){}，target存放实际dom或者组件实例。
 
 11. react中将字符串作为innerHTML的值输出使用dangerouslySetInnerHTML属性，它的值是一个拥有'__html'属性的对象：
 
