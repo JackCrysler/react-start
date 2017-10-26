@@ -1,5 +1,5 @@
 # react 核心知识 
-##### 去年元夜时，花市灯如昼，月上柳梢头，人约黄昏后
+
 1.  jsx语法，类似于html。它的实质是：React.createElement(type,attr,children)的语法糖
 
 2.  创建react component的方式：function 或者 ES6-class（推荐使用class方式）。  
@@ -131,4 +131,4 @@
     }
 
     
-
+##### 今朝有酒今朝醉
