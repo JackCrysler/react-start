@@ -54,11 +54,15 @@
 
             存在期
 
-                componentWillRecevieProps
+                componentWillReceiveProps
                 shouldComponentUpdate(必须返回值),   
                 componentWillUpdate,    
                 dom rerender,
                 componentDidUpdate
+            
+             销毁期
+
+                componentWillUnmount
             
         * React.createClass({})创建的component
 
@@ -71,7 +75,7 @@
 
             存在期
 
-                componentWillRecevieProps
+                componentWillReceiveProps
                 shouldComponentUpdate
                 componentWillUpdate
                 componentDidUpdate
