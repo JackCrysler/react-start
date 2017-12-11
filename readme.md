@@ -1,8 +1,8 @@
 # react 核心知识 
 
-1.  jsx语法，类似于html。它的实质是：React.createElement(type,attr,children)的语法糖
+1.  jsx语法，类似于html。它的实质是：React.createElement(type,attr,children)的语法糖。
 
-2.  创建react component的方式：function 或者 ES6-class（推荐使用class方式）。  
+2.  创建react component的方式：function 或者 class（ES6）。推荐使用class方式。  
     
     * 如果不用es6的class可以使用：  
 
