@@ -16,11 +16,11 @@
 
     * this问题  
 
-        使用ES6的class去创建组件，需要把定义在jsx上的函数bind(this)，或者直接使用箭头函数。
+        使用ES6的class去创建组件，需要把在jsx上调用的函数bind(this)，或者直接使用箭头函数。
 
-3.  ReactDOM.render()用于把react创建的虚拟dom渲染到浏览器中。
+3.  ReactDOM.render()：用于把react创建的虚拟dom渲染到浏览器中。
 
-4.  props是由组件外界传到组件内部的属性或者方法，在组建内部不建议修改props的值。属性props值可以是字符串、变量、表达式、函数，值放在插值表达式{}中;
+4.  props是由组件外界传到组件内部的属性或者方法，在组建内部不建议修改props的值。属性props值可以是字符串、变量、表达式、函数，放在插值表达式{}中;
 
     state是组件本身所具有的属性或者方法, 改变state使用setState(),只有通过setState才能触发react视图更新,这个方法和其他生命周期一样都继承自React.component;
 
@@ -37,9 +37,9 @@
             return a+b
         }
 
-    + *当你想要实现继承时，不妨试试组件拼装。props.children类似于vue的slot插槽*
+    + *当你想要实现继承时，不妨试试组件拼装。使用props.children实现组件拼装，类似于vue的slot插槽*
 
-5. 事件绑定要用驼峰写法 onClick  onInput 
+5. 事件绑定要用驼峰写法 onClick  onInput ...
 
 6. 样式设置，在react中以对象的形式设置样式，驼峰命名法，赋值给组件元素的style属性即可
 
@@ -114,7 +114,7 @@
 
 12. 类型检查typechecking
 
-    传入react组件的参数，在定义的时候可以指定类型，如果使用者未传入指定类型react会抛出warning（注意warning不是报错），这个类似于vue组件props参数为object时的用法，不过react更强大更全面。<a href="https://facebook.github.io/react/docs/typechecking-with-proptypes.html">参考文档</a>
+    传入react组件的参数，在定义的时候可以指定类型，如果使用者未传入指定类型react会抛出warning（注意warning不是报错），这个类似于vue组件传值props为object时的用法，不过react更强大更全面。<a href="https://facebook.github.io/react/docs/typechecking-with-proptypes.html">参考文档</a>
 
     下面列举几个较为基本的类型检查：
 
